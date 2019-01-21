@@ -1,0 +1,29 @@
+<br>
+<h3>Categories</h3>
+<% if !@categories.blank? %>
+    <% for item in @categories %><br>
+    <%= item.name %> <%= link_to '[x]', delete_categories_path(item.id),
+        data: { confirm: "Are you sure?" } %><br>
+    <% end %>
+<% else %>
+    
+<% end %>
+<br>
+<br>
+ <% if @category.errors.any? %>
+        <% @category.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %> 
+
+
+<%= form_for :category, url: categories_create_path do |f| %>
+    <p>
+      <br><h5>Add a new category</h5>
+        <%= f.text_field(:name, {:class => 'form-control form-control-categories'}) %>
+    </p>
+    <p>
+    <%= f.submit "Add to category", ({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>
+

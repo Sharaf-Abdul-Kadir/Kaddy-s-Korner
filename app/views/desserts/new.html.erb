@@ -1,0 +1,35 @@
+<br>
+<h3>These are our Delicious Desserts</h3>
+<br>
+<% @dishes.each do |dish| %>
+    <p><%= dish.name %></p>
+<%end%>
+<h3>Some Suggested Desserts by our customers</h3>
+<% if !@desserts.blank? %>
+    <% for item in @desserts %><br>
+    <%= item.dishname %> 
+    <% if item.owner.to_i == session[:user_id]%>
+    <%= link_to 'Delete', [item],
+        method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+        <br>
+    <% end %>
+<% else %>
+
+<% end %>
+
+
+<br>
+<h3>Suggest Desserts you love to eat in your next visit at Kaddy's Korner</h3>
+<%= form_for @dessert do |f| %>
+    <p>
+        <h5>Dish name</h5>
+        <%= f.text_field(:dishname,{:class => 'form-control form-control-desserts'}) %>
+    </p>
+    <p>
+        <%= f.submit "Add to Menu", ({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>
+<div class="well">
+   <p><strong><%= @dessert.dishname %> </strong></p>
+</div>

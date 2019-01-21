@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-light_login">
+  <a class="navbar-brand login_title links_color" href="#"> Kaddy's Korner</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content:flex-end;">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active login_register links_color" href="<%=login_path%>">Login <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link login_register links_color btn btn:hover" href="<%=registration_path%>">Register</a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+        <br>
+        <div class="card bg-info">
+            <div class="card-body text-center">
+              <h1 class="links_color">Welcome back!</h1>
+              <p class="links_color">Log in to the Kaddy's network.</p>
+          <%= form_tag sessions_path do %>
+            <div class="field">
+              <br>
+              <%= text_field_tag :email, params[:email] , {:placeholder => ' Email...', :class => 'placeholder_css'} %>
+            </div>
+            <div class="field">
+               <br>
+              <%= password_field_tag :password ,params[:password] , {:placeholder => ' Password...', :class => 'placeholder_css'}   %>
+            </div>
+            <br>
+            <div class="actions "> <button type="submit"
+              class="btn btn-primary btn-primary_login pull-right">Log In</button>
+            </div>     
+          <% end %>
+            </div>
+        </div>
+        </div>
+    </div> 
+</div>   
+

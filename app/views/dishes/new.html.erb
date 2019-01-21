@@ -1,0 +1,50 @@
+<h3 class="links_color">These are our Delicious Dishes</h3><br>
+<div class="container">
+<div class="row">
+    <div class="col">
+      <h3 class="links_color" >Starters</h3>
+     <% @starter.each do |starters| %>
+      <p>  <%= starters.name%> <%= link_to '[x]', delete_dishes_path(starters.id),
+        data: { confirm: "Are you sure?" } %><br></p>
+      <%end%> 
+    </div>
+    <div class="col">
+     <h3 class="links_color">Maincourse</h3>
+      <% @maincourse.each do |maincourse| %>
+        <p>  <%= maincourse.name%> <%= link_to '[x]', delete_dishes_path(maincourse.id),
+        data: { confirm: "Are you sure?" } %><br></p>
+      <%end%>
+    </div>
+    <div class="col">
+    <h3 class="links_color">Desserts</h3>
+      <% @dessert.each do |dessert| %>
+         <p>  <%= dessert.name%> <%= link_to '[x]', delete_dishes_path(dessert.id),
+        data: { confirm: "Are you sure?" } %><br></p>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<%= form_for :dish, url: dishes_create_path do |f| %>
+
+    <p>
+        <h5>Add a new Dish</h5>
+        <%= f.text_field(:name, {:class => 'form-control form-control-dishes'}) %>
+    </p>
+
+    <h5>Select Categories</h5>
+
+    <%= f.select "category_id", options_from_collection_for_select(@categories, "id", "name")%>
+
+    <select name="dish[sub_category]">
+        <option value="Veg">Veg</option>
+        <option value="Non-Veg">Non-Veg</option>
+    </select><br><br>
+    <p>
+        <%= f.submit "Add to menu", ({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %> 

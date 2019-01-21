@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= @title %></h1>
+      <p><%= @content %>  <p>
+    </div>
+    <div class="col-md-2 ">
+      <a href="<%=desserts_list_path%>" class="btn btn-secondary button_property float-right btn-lg active" role="button" aria-pressed="true">Move to Desserts</a>
+    </div> 
+  </div>
+  <div id='main-content' class="card-deck">
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top img_cards" src="https://www.cscassets.com/recipes/wide_cknew/wide_27341.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Veg</h5>
+        <p class="card-text">Veggies come to explore our dishes</p>
+        <a href="<%=v_m_path%>" class="btn btn-primary">Menu</a>
+      </div>
+    </div>
+    <div class="card mb-4" style="width: 18rem;">
+        <img class="card-img-top img_cards" src="https://s3.scoopwhoop.com/ada/sif/2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Non-veg</h5>
+        <p class="card-text">Every possible non-veg dish available</p>
+        <a href="<%=n_v_m_path%>" class="btn btn-primary">Menu</a>
+      </div>
+    </div>
+</div>

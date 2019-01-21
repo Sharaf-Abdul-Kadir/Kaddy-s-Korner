@@ -1,0 +1,8 @@
+<hr> 
+<%= link_to "Edit", edit_categories_path(@category), 
+    :class => 'btn btn-dark'%>
+<%= link_to "Delete", categories_path(@category), 
+                method: :delete,
+                data: {confirm: 'Are you sure?'},
+                :class => 'btn btn-danger' %>
+<hr>

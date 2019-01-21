@@ -1,0 +1,53 @@
+<h1><%= @title %></h1>
+<%= form_for @user, :url => new_signup_path , method: 'post', html:{role:'form'} do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%# registration %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-light_login">
+  <a class="navbar-brand login_title links_color" href="#"> Kaddy's Korner</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="justify-content:flex-end;">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link  login_register links_color btn btn:hover" href="<%=login_path%>">Login <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active login_register links_color " href="<%=registration_path%>">Register</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <br>
+        <div class="card bg-info">
+            <div class="card-body text-center">
+              <h1 class="links_color">Welcome!</h1>
+              <p class="links_color">Sign up to join the Kaddy's network.</p>
+              <div class="field"><br>
+                <%= f.text_field :name, {:placeholder => ' Name', :class => 'placeholder_css'}  %>
+              </div>
+              <div class="field"><br>
+                <%= f.text_field :email, {:placeholder => ' Email...', :class => 'placeholder_css'} %>
+              </div>
+              <div class="field"><br>
+                <%= f.password_field :password, {:placeholder => ' Password...', :class => 'placeholder_css'} %>
+              </div>
+              <div class="field"><br>
+                <%= f.password_field :password_confirmation, {:placeholder => ' Confirm Password...', :class => 'placeholder_css'} %>
+              </div>
+                <br>
+              <div class="actions btn btn-primary btn-primary_register"><%= f.submit "Sign up" ,{:class => "btn-primary_register"} %></div>
+              <% end %>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

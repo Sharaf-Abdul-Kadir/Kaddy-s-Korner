@@ -1,0 +1,38 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
+<div id='main-content' class="card-deck" style="margin: 50px 0 0 0">
+  <div class="card mb-4" style="width: 18rem;">
+      <img class="card-img-top img_cards"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUQELSwN6oPLnm-KAgUNLsrnPjHWeJ9DpRowE5OqjZEuMjENu"
+         alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title links_color">Sizzling Starters</h5>
+      <p class="card-text links_color">Finger-licking starters can't be missed</p>
+      <a href="<%=starters_list_path%>" class="btn btn-primary btn-primary_register">Menu</a>
+    </div>
+  </div>
+  <div class="card mb-4" style="width: 18rem;">
+      <img class="card-img-top img_cards"
+         src="http://www.bacco-bkk.com/images/menu_pic/meat_main_course_112.PettoD'AnatraAll'Arancio_full.jpg"
+         alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title links_color">Magnificent Maincourse</h5>
+      <p class="card-text links_color">Mouth-watering Maincourse waiting</p>
+      <a href="<%=maincourse_list_path%>" class="btn btn-primary btn-primary_register">Menu</a>
+    </div>
+  </div>
+  <div class="card mb-4" style="width: 18rem;">
+      <img class="card-img-top img_cards" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAxxwZM8WOypYKqN74L_aBR5f3_CXx70-TZNwtImX7Jbntg1lI"
+         alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title links_color">Delicious Desserts</h5>
+      <p class="card-text links_color">These desserts will ruin your diet</p>
+      <a href="<%=desserts_list_path%>" class="btn btn-primary btn-primary_register">Menu</a>
+    </div>
+  </div>
+  
+</div>
+
+     

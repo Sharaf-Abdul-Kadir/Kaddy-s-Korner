@@ -1,0 +1,20 @@
+<br>
+<div class="container">
+  <div class="row">
+        <div class="col-md-10">
+            <h3><%= @title %></h3>
+            <br>
+            <p><%= @content %>  <p>
+            <% @dishes.each do |dish| %>
+            <p><%= dish.name %></p>
+            <%end%>
+        </div>
+        <div class="col-md-2 ">
+            <a href="<%=starters_list_path%>" class="btn btn-secondary button_property float-right btn-lg active"
+                role="button" aria-pressed="true">Starters</a>
+            <a href="<%=n_v_m_path%>" class="btn btn-secondary button_property float-right btn-lg active" 
+                role="button" aria-pressed="true">Non-veg Maincourse</a>
+            <a href="<%=desserts_list_path%>" class="btn btn-secondary button_property float-right btn-lg active" role="button" aria-pressed="true">Desserts</a>
+        </div>
+    </div>
+</div>

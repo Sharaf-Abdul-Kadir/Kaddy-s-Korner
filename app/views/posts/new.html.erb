@@ -1,0 +1,22 @@
+<br>
+<h3>Add a new recipe<h3><br>
+<%= form_for :post, url: posts_path do |f| %>
+   <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %> 
+    <p>
+        <%= f.label :Dish_name %><br>
+        <%= f.text_field(:title, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.label :How_it_is_cooked %><br>
+        <%= f.text_field(:body, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>

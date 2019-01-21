@@ -1,0 +1,11 @@
+<br>
+<h3>Dishes</h3>
+<br>
+<% @posts.each do |post| %>
+    <div class="well">
+        <h3><%= post.title %></h3>
+        <p><%= post.body %></p>
+        <%= link_to "Add Reviews", post_path(post), 
+            :class => 'btn btn-dark' %>
+    </div>
+<% end %>

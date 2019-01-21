@@ -1,0 +1,22 @@
+<h3>Add Review</h3>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
+    <% if @post.comments.build.errors.any? %>
+        <% @post.comments.build.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+
+    <p>
+        <%= f.label :username %><br>
+        <%= f.text_field(:username, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.label :review %><br>
+        <%= f.text_field(:body, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>
