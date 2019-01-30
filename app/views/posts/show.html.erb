@@ -1,12 +1,12 @@
-<h2><%= @post.title %></h2>
+<h2 class='links_color'><%= @post.title %></h2>
 <p><%= @post.body %></p>
 <hr> 
 <%= link_to "Edit", edit_post_path(@post), 
-    :class => 'btn btn-dark'%>
+    :class => 'btn btn-secondary button_property btn-lg active btn-primary_register btn_view', :style => 'width:72px;'%>
 <%= link_to "Delete", post_path(@post), 
                 method: :delete,
                 data: {confirm: 'Are you sure?'},
-                :class => 'btn btn-danger' %>
+                :class => 'btn btn-secondary button_property btn-lg active btn-primary_register btn_view' %>
 
 <hr>
 

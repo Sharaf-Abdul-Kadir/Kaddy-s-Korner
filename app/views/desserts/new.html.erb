@@ -1,35 +1,40 @@
-<br>
-<h3>These are our Delicious Desserts</h3>
-<br>
-<% @dishes.each do |dish| %>
-    <p><%= dish.name %></p>
-<%end%>
-<h3>Some Suggested Desserts by our customers</h3>
-<% if !@desserts.blank? %>
-    <% for item in @desserts %><br>
-    <%= item.dishname %> 
-    <% if item.owner.to_i == session[:user_id]%>
-    <%= link_to 'Delete', [item],
-        method: :delete, data: { confirm: "Are you sure?" } %>
-    <% end %>
-        <br>
-    <% end %>
-<% else %>
-
-<% end %>
-
-
-<br>
-<h3>Suggest Desserts you love to eat in your next visit at Kaddy's Korner</h3>
-<%= form_for @dessert do |f| %>
-    <p>
-        <h5>Dish name</h5>
-        <%= f.text_field(:dishname,{:class => 'form-control form-control-desserts'}) %>
-    </p>
-    <p>
-        <%= f.submit "Add to Menu", ({:class => 'btn btn-primary'}) %>
-    </p>
-<% end %>
-<div class="well">
-   <p><strong><%= @dessert.dishname %> </strong></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class='links_color'>These are our Delicious Desserts</h3><br>
+            <% @dishes.each do |dish| %>
+                <p class='content_color'><%= dish.name %></p>
+            <%end%>
+            <h3 class='links_color'>Some Suggested Desserts by our customers</h3>
+            <% if !@desserts.blank? %>
+                <% for item in @desserts %><br>
+                <%= item.dishname %> 
+                <% if item.owner.to_i == session[:user_id]%>
+                <%= link_to 'Delete', [item],
+                    method: :delete, data: { confirm: "Are you sure?" } %>
+                <% end %><br>
+                <% end %>
+            <% else %>
+            <% end %>
+        </div>
+        <div class="col-md-6"><br>
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <h3 class='links_color'>Suggest Desserts you love to eat <br> in your next visit at Kaddy's Korner</h3><br>
+                    <%= form_for @dessert do |f| %>
+                        <p>
+                            <h5 class='links_color float-left'>Dish name</h5><br><br>
+                            <%= f.text_field(:dishname,{:class => 'form-control form-control-desserts float-left'}) %><br><br><br>
+                        </p>
+                        <p>
+                            <%= f.submit "Add to Menu", ({:class => 'btn btn-secondary button_property btn-lg active btn-primary_register float-left', :style => 'padding: 15px'}) %>
+                        </p>
+                    <% end %>
+                    <div class="well">
+                        <p class='content_color'><strong><%= @dessert.dishname %> </strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

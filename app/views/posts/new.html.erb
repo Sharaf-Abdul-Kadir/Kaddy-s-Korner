@@ -1,22 +1,32 @@
 <br>
-<h3>Add a new recipe<h3><br>
-<%= form_for :post, url: posts_path do |f| %>
-   <% if @post.errors.any? %>
-        <% @post.errors.full_messages.each do |msg| %>
-            <div class="alert alert-danger"><%= msg %></div>
-        <% end %>
-    <% end %> 
-    <p>
-        <%= f.label :Dish_name %><br>
-        <%= f.text_field(:title, {:class => 'form-control'}) %>
-    </p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <h3 class='links_color'>Add a new recipe<h3><br>
+                        <%= form_for :post, url: posts_path do |f| %>
+                            <% if @post.errors.any? %>
+                                <% @post.errors.full_messages.each do |msg| %>
+                                <div class="alert alert-danger"><%= msg %></div>
+                            <% end %>
+                        <% end %> 
+                        <p>
+                            <%= f.label :Dish_name,{:class => 'float-left links_color'} %><br>
+                            <%= f.text_field(:title, {:class => 'form-control'}) %>
+                        </p>
 
-    <p>
-        <%= f.label :How_it_is_cooked %><br>
-        <%= f.text_field(:body, {:class => 'form-control'}) %>
-    </p>
+                        <p>
+                            <%= f.label :How_it_is_cooked,{:class => 'float-left links_color'} %><br>
+                            <%= f.text_field(:body, {:class => 'form-control'}) %>
+                        </p>
 
-    <p>
-    <%= f.submit({:class => 'btn btn-primary'}) %>
-    </p>
-<% end %>
+                        <p>
+                        <%= f.submit({:class => 'btn btn-secondary button_property btn-lg active btn-primary_register'}) %>
+                        </p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

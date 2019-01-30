@@ -67,6 +67,10 @@ html{
     z-index: 1;
 }
 
+nav a{
+    text-decoration: none !important;
+}
+
 .bg-light {
 
     background-color: #fbce76c7 !important;
@@ -105,6 +109,15 @@ html{
     font-size: 16px !important;
 
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+
+
+}
 
 #password{
 
@@ -119,6 +132,17 @@ html{
 
 }
 
+.content_color{
+
+    color:#ff0000;
+    
+}
+
+.fab{
+
+    color: #212528 !important;
+}
+
 .card-body{
     background-color: moccasin;
 }
@@ -129,6 +153,7 @@ html{
     border-color: black !important; 
     margin: 5px !important;
     border-radius: 13px !important;
+    background-image: none !important;
 
 }
 .btn-primary_register{
@@ -139,6 +164,9 @@ html{
     border-radius: 13px !important;
     border: 0px !important;
     color: white;
+    background-image: none !important;
+    box-shadow: none !important;
+
 
 }
 .bg-light_login {
@@ -169,6 +197,23 @@ html{
     color: white;
     border-radius: 13px !important;
   }
+
+.dropdown-item:active {
+        background-color: #e19708;
+}
+
+.btn_view{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.edit_form{
+    width: 100% !important;
+}
+
+.transform::after{
+    transform: rotate(180deg);
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :users
   resources :sessions
   resources :desserts
@@ -30,7 +32,7 @@ Rails.application.routes.draw do
   get 'n_v_starters' => 'pages#n_v_starters'
   get 'v_m' => 'pages#v_m'
   get 'n_v_m' => 'pages#n_v_m'
-
+  get 'destroy_admin_user_session' => 'destroy_admin_user_session'
 
   resources :posts do
     resources :comments

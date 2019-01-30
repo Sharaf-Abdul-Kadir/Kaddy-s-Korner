@@ -1,22 +1,30 @@
 <br><br>
-<h3>Edit Recipe<h3>
-<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
-    <% if @post.errors.any? %>
-        <% @post.errors.full_messages.each do |msg| %>
-            <div class="alert alert-danger"><%= msg %></div>
-        <% end %>
-    <% end %>
-    <p>
-       <h4>Dish name </h4>
-        <%= f.text_field(:title, {:class => 'form-control'}) %>
-    </p>
-
-    <p>
-        <h4>How it is cooked</h4>
-        <%= f.text_field(:body, {:class => 'form-control'}) %>
-    </p>
-
-    <p>
-    <%= f.submit({:class => 'btn btn-primary'}) %>
-    </p>
-<% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card bg-info">
+                <div class="card-body text-center">
+                    <h3 class='links_color'>Edit Recipe<h3>
+                    <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+                        <% if @post.errors.any? %>
+                            <% @post.errors.full_messages.each do |msg| %>
+                                <div class="alert alert-danger"><%= msg %></div>
+                            <% end %>
+                        <% end %>
+                        <p>
+                            <h4 class='links_color float-left'>Dish name </h4>
+                            <%= f.text_field(:title, {:class => 'form-control edit_form'}) %><br>
+                        </p>
+                        <p>
+                            <h4 class='links_color float-left'>How it is cooked</h4>
+                            <%= f.text_field(:body, {:class => 'form-control edit_form'}) %><br>
+                        </p>
+                        <p>
+                            <%= f.submit "Save",({:class => 'btn btn-secondary button_property btn-lg active btn-primary_register', :style => 'padding: 15px'}) %>
+                        </p>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
