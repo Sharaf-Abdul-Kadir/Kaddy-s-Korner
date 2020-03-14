@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'home' => 'posts#index'
   get 'categories_new' => 'categories#new'
   get 'dishes_new' => 'dishes#new'
+  get 'dishes_index' => 'dishes#index'
   post 'dishes_create' => 'dishes#create'
   post 'categories_create' => 'categories#create'
   get 'categories_create' => 'categories#new'
@@ -33,7 +34,9 @@ Rails.application.routes.draw do
   get 'v_m' => 'pages#v_m'
   get 'n_v_m' => 'pages#n_v_m'
   get 'destroy_admin_user_session' => 'destroy_admin_user_session'
-
+  get 'view_post/:id' => 'comments#view_post'
+  get 'new_post' => 'posts#new_post'
+  get 'new_user' => 'users#new_user'
   resources :posts do
     resources :comments
   end

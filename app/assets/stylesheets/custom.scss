@@ -17,7 +17,7 @@
 }
 #background_image
 {
-    background: url("http://alquiforma.com/p/2018/05/powerpoint-restaurant-menu-template-luxury-food-menu-background-hd-for-restaurant-menu-background.jpg") center center no-repeat;
+    background-color: #e1bf7f;
     background-size:cover
   }
 // .card 
@@ -214,6 +214,33 @@ input:-webkit-autofill:active  {
 .transform::after{
     transform: rotate(180deg);
 }
+.embose_effect {
+
+    border-radius: .25rem;
+    box-shadow: 2px 2px 5px black;
+    background-color: white;
+}
+
+.glow {
+    font-family: cursive;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #d5ad67, 0 0 50px #fff, 0 0 60px #d5ad67, 0 0 70px #fff;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #f6cd79, 0 0 40px #edd190, 0 0 50px #fff, 0 0 60px #e4c283, 0 0 70px #e1bf7f, 0 0 80px #832022;
+    }
+  }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -8,7 +8,7 @@
                     data: { confirm: "Are you sure?" } %><br>
                 <% end %>
             <% else %>   
-            <% end %> <br><br>>
+            <% end %> <br><br>
             <% if @category.errors.any? %>
                     <% @category.errors.full_messages.each do |msg| %>
                         <div class="alert alert-danger"><%= msg %></div>
@@ -16,7 +16,7 @@
             <% end %> 
         </div>
         <div class="col-md-4"><br>
-            <div class="card bg-info">
+            <div class="card bg-info embose_effect">
                 <div class="card-body text-center">
                     <%= form_for :category, url: categories_create_path do |f| %>
                         <p>

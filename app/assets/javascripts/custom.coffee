@@ -1,5 +1,5 @@
 $(document).ready ->
   $('.dropdown-toggle').click ->
-    $(this).toggleClass('transform');
+    $(this).toggleClass('transform')
     return
   return

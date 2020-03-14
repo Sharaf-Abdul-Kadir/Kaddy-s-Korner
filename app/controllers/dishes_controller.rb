@@ -1,11 +1,12 @@
 class DishesController < ApplicationController
     http_basic_authenticate_with name:"admin" , password:"itquest123", except:[:index , :show]
+    
     def index
         @dishes = Dish.all
     end
 
     def show
-        @dishes = Dish.find(params[:id])
+        @dishes = Dish.find(params[:c])
     end
 
     def new

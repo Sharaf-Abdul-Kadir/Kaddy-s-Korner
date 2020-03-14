@@ -4,7 +4,6 @@ class PostsController < ApplicationController
         if user_signed_in?
             redirect_to login_path
         end
-    
     end
     
     def index
@@ -19,6 +18,10 @@ class PostsController < ApplicationController
         @post = Post.new
     end
     
+    def new_post
+        @posts = Post.all
+    end
+
     def create
         @post = Post.new(post_params)
 

@@ -26,13 +26,13 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1">
-      <div class="card bg-info">
+    <div class="col-md-5 offset-md-1">
+      <div class="card bg-info embose_effect">
         <div class="card-body text-center">
           <%= form_for :dish, url: dishes_create_path do |f| %>
             <p>
               <h5 class='links_color float-left'>Add a new Dish</h5><br><br>
-              <%= f.text_field(:name, {:class => 'form-control form-control-dishes'}) %><br>
+              <%= f.text_field(:name, {:class => 'form-control form-control-dishes',:style => 'width:99%'}) %><br>
             </p>
             <h5 class='links_color float-left' >Select Categories</h5>
               <%= f.select "category_id", options_from_collection_for_select(@categories, "id", "name")%>

@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 offset-md-1">
-            <div class="card bg-info">
+            <div class="card bg-info embose_effect">
                 <div class="card-body text-center">
                     <h3 class='links_color'>Add a new recipe<h3><br>
                         <%= form_for :post, url: posts_path do |f| %>
@@ -13,16 +13,16 @@
                         <% end %> 
                         <p>
                             <%= f.label :Dish_name,{:class => 'float-left links_color'} %><br>
-                            <%= f.text_field(:title, {:class => 'form-control'}) %>
+                            <%= f.text_field(:title, {:class => 'form-control form-control-posts'}) %>
                         </p>
 
                         <p>
                             <%= f.label :How_it_is_cooked,{:class => 'float-left links_color'} %><br>
-                            <%= f.text_field(:body, {:class => 'form-control'}) %>
+                            <%= f.text_field(:body, {:class => 'form-control form-control-posts'}) %><br>
                         </p>
 
                         <p>
-                        <%= f.submit({:class => 'btn btn-secondary button_property btn-lg active btn-primary_register'}) %>
+                        <%= f.submit "Add Recipe", ({:class => 'btn btn-primary btn-primary_register btn_view btn_padding'}) %>
                         </p>
                     <% end %>
                 </div>

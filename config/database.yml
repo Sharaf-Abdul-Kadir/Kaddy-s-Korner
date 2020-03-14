@@ -18,7 +18,7 @@ development:
 test:
  adapter: postgresql
  encoding: utf8
- database: simpleblog
+ database: simple_blog
  username: postgres
  password: macro129
  host: localhost
